@@ -46,14 +46,18 @@ In a Unix-like operating system, the environment of a process includes a set of 
 1. Function:
 
  **Scope**: Functions are units of code within a program or a module. They are part of the application's source code and are designed to perform a specific task or set of tasks.
+
  **Purpose**: Functions are used for code organization, modularization, and reusability within a program. They help break down a program into smaller, manageable parts, improving maintainability and readability.
+
  **Invocation**: Functions are invoked by calling their name within the program. They typically run in user mode, and their execution is managed by the program itself.
 
 2. System Call:
 
  **Scope**: System calls are interfaces provided by the operating system kernel to enable interaction between user-level processes and the operating system. They are part of the operating system's kernel code.
+
  **Purpose**: System calls provide a way for user-level programs to request services or resources from the operating system, such as file I/O, process creation, and network communication. They serve as a bridge between user space and kernel space.
- **Invocation**: System calls are invoked through a specific interface, often involving **interrupt** mechanisms or special instructions that switch the CPU from user mode to kernel mode. They trigger privileged operations and are used to perform tasks that require kernel-level access.
+
+ **Invocation**: System calls are invoked through a specific interface, often involving interruptmechanisms or special instructions that switch the CPU from user mode to kernel mode. They trigger privileged operations and are used to perform tasks that require kernel-level access.
 
 * How to create processes
 
