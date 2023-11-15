@@ -24,13 +24,11 @@ int execute_cmd(char *input, char *pgm)
 		free_list(inList);
 		return (0);
 	}
-
 	if (!strcmp(inList[0], "exit")) /* Exit the shell */
 	{
 		free_list(inList);
 		return (1);
 	}
-
 	path = get_path(inList[0]); /* Check the existent of the cmd's binary file */
 	if (!path)
 	{

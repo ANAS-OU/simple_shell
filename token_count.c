@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-* substr_counter - function that takes a string as an argment
+* token_count - function that takes a string as an argment
 * and count the number of sub-strings on it.
 * @str: pointer to a string.
 * @by: sub-strings separator.
