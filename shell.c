@@ -28,10 +28,7 @@ int main(int argc, char **argv)
 		break;
 
 	if (execute_cmd(input, argv[0]))
-	{
-		free(input);
-		return (127);
-	}
+		break;
 	}
 	free(input);
 	return (0);
