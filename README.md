@@ -137,13 +137,9 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o shell
 ```
 * run the code
 
-1. ```sh
- ./shell 
- ```
+1. ```./shell ```
 
-2. ```sh
- valgrind --leak-check=full --show-leak-kinds=all -s ./shell
- ```
+2. ```valgrind --leak-check=full --show-leak-kinds=all -s ./shell```
 
 * testing time
 
