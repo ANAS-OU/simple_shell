@@ -2,7 +2,7 @@
 
 /**
  * get_path - function that looks for the path
- * the given command.
+ * of the given command.
  * @cmd: the command to look for.
  *
  * Return: cmd path, or NULL if not found.

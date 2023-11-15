@@ -13,7 +13,7 @@ char **str_split(char *str, char *by)
 	char **list, *s, *word;
 	unsigned int i, wc;
 
-	wc = substr_counter(str, by);
+	wc = token_count(str, by);
 
 	/* adding one for NULL */
 	wc++;

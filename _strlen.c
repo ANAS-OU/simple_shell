@@ -1,4 +1,3 @@
-/* _strlen.c */
 #include "shell.h"
 
 /**

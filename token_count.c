@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
-* substr_counter - function that take a string as argment
+* substr_counter - function that takes a string as an argment
 * and count the number of sub-strings on it.
 * @str: pointer to a string.
 * @by: sub-strings separator.
 *
 * Return: number of sub-strings.
 */
-unsigned int substr_counter(char *str, char *by)
+unsigned int token_count(char *str, char *by)
 {
 	char *new_str, *word;
 

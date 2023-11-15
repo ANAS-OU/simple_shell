@@ -10,19 +10,18 @@
 int main(int argc, char **argv)
 {
 	char *input;
-
-	size_t input_len, bsize;
+	size_t input_len;
 	(void)argc;
 
 	input = NULL;
 	input_len = 0;
-	bsize = 0;
 	while (1)
 	{
 	/* Don't print in No-Intractive mode */
 	if (isatty(STDIN_FILENO))
 		printf("($) ");
-		input_len = getline(&input, &bsize, stdin);
+
+	input_len = getline(&input, &input_len, stdin);
 
 	/* Handling input error and EOF */
 	if ((int)input_len == -1)
@@ -30,7 +29,6 @@ int main(int argc, char **argv)
 
 	if (execute_cmd(input, argv[0]))
 	{
-		printf("buffer size: %d\n", (int)bsize);
 		free(input);
 		return (127);
 	}

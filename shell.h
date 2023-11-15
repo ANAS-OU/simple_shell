@@ -21,19 +21,20 @@
 /**********************
  * Functions prototype
  **********************/
+/* str_split.c */
 char **str_split(char *str, char *by);
-unsigned int substr_counter(char *str, char *by);
+/* token_count.c */
+unsigned int token_count(char *str, char *by);
+/* get_path.c */
 char *get_path(char *cmd);
+/* execute_cmd.c */
 int execute_cmd(char *input, char *pgm);
+/* free_list.c */
 void free_list(char **list);
+/* print_error.c */
 void print_error(char *pgm, char *cmd);
-
 /* _strlen.c */
 int _strlen(char *str);
-
-/* _getline.c */
-ssize_t _getline(char **lineptr, size_t *bsize, FILE *stream);
-int _fgetc(FILE *stream);
 
 /**********************
  *   The Environment
