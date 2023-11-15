@@ -18,8 +18,7 @@ int execute_cmd(char *input, char *pgm)
 	/* Slice input to pieces and put them to a list */
 	inList = str_split(input, " \t\n");
 
-	/* Skipping case */
-	if (!inList[0])
+	if (!inList[0]) /* Skipping case */
 	{
 		free_list(inList);
 		return (0);
@@ -29,6 +28,9 @@ int execute_cmd(char *input, char *pgm)
 		free_list(inList);
 		return (1);
 	}
+	if (customize_env(inList))
+		return (0);
+
 	path = get_path(inList[0]); /* Check the existent of the cmd's binary file */
 	if (!path)
 	{
@@ -36,7 +38,6 @@ int execute_cmd(char *input, char *pgm)
 		free_list(inList);
 		return (0);
 	}
-
 	/* Creating new process to execute the given cmd */
 	child_pid = fork();
 	if (child_pid == 0) /* Child process */
@@ -48,8 +49,7 @@ int execute_cmd(char *input, char *pgm)
 			wait(&status);
 
 	/* Free the allocated memory*/
-	free_list(inList);
-	free(path);
+	free_list(inList), free(path);
 	return (0);
 }
 
@@ -93,4 +93,33 @@ char *get_path(char *cmd)
 
 	free_list(paths);
 	return (NULL);
+}
+
+
+/**
+ * customize_env - function that work to set and unset
+ * environment variables.
+ * @inList: double list pointer.
+ *
+ * Return: 1 - then it works, 0 - Otherwise.
+ */
+int customize_env(char **inList)
+{
+	if (!strcmp(inList[0], "setenv"))
+	{
+		if (setenv(inList[1], inList[2], 1) == -1)
+			perror("Failed adding a new environment variable!");
+
+		free_list(inList);
+		return (1);
+	}
+	else if (!strcmp(inList[0], "unsetenv"))
+	{
+		if (unsetenv(inList[1]) == -1)
+			perror("Failed unset environment variable!");
+
+		free_list(inList);
+		return (1);
+	}
+	return (0);
 }

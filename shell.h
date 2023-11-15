@@ -28,6 +28,7 @@ unsigned int token_count(char *str, char *by);
 /* execute_cmd.c */
 int execute_cmd(char *input, char *pgm);
 char *get_path(char *cmd);
+int customize_env(char **inList);
 
 /* _string.c */
 int _strlen(char *str);
