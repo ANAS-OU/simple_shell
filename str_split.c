@@ -23,15 +23,46 @@ char **str_split(char *str, char *by)
 	if (!list)
 		return (NULL);
 
-	s = strdup(str);
+	s = _strdup(str);
 	word = strtok(s, by);
 
 	for (i = 0; word; i++)
 	{
-		list[i] = strdup(word);
+		list[i] = _strdup(word);
 		word = strtok(NULL, by);
 	}
 	list[i] = NULL;
 	free(s);
 	return (list);
+}
+
+
+/**
+* token_count - function that takes a string as an argment
+* and count the number of sub-strings on it.
+* @str: pointer to a string.
+* @by: sub-strings separator.
+*
+* Return: number of sub-strings.
+*/
+unsigned int token_count(char *str, char *by)
+{
+	char *new_str, *word;
+
+	unsigned int wc;
+
+	if (!str)
+		return (0);
+
+	wc = 0;
+	new_str = _strdup(str);
+	word = strtok(new_str, by);
+	while (word)
+	{
+		word = strtok(NULL, by);
+		wc++;
+	}
+
+	free(new_str);
+	return (wc);
 }

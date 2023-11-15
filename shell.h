@@ -23,18 +23,24 @@
  **********************/
 /* str_split.c */
 char **str_split(char *str, char *by);
-/* token_count.c */
 unsigned int token_count(char *str, char *by);
-/* get_path.c */
-char *get_path(char *cmd);
+
 /* execute_cmd.c */
 int execute_cmd(char *input, char *pgm);
+char *get_path(char *cmd);
+
+/* _string.c */
+int _strlen(char *str);
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+char *_strdup(char *str);
+int _strcmp(char *s1, char *s2);
+
 /* free_list.c */
 void free_list(char **list);
+
 /* print_error.c */
 void print_error(char *pgm, char *cmd);
-/* _strlen.c */
-int _strlen(char *str);
 
 /**********************
  *   The Environment

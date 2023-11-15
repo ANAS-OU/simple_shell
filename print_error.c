@@ -12,10 +12,10 @@ void print_error(char *pgm, char *cmd)
 {
 	char buffer[BUFSIZE];
 
-	strcpy(buffer, pgm);
-	strcat(buffer, ": 1: ");
-	strcat(buffer, cmd);
-	strcat(buffer, ": not found\n");
+	_strcpy(buffer, pgm);
+	_strcat(buffer, ": 1: ");
+	_strcat(buffer, cmd);
+	_strcat(buffer, ": not found\n");
 
 	/* printing the error */
 	write(STDERR_FILENO, buffer, _strlen(buffer));
