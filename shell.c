@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 
 	/* Handling input error and EOF */
 	if ((int)input_len == -1)
-		break;
+		free(input), exit(0);
 
 	if (execute_cmd(input, argv[0]))
 		break;
