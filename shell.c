@@ -9,7 +9,6 @@
 */
 int main(int argc, char **argv)
 {
-	int status = 0;
 	char *input;
 	size_t input_len;
 	(void)argc;
@@ -27,10 +26,9 @@ int main(int argc, char **argv)
 	/* Handling input error and EOF */
 	if ((int)input_len == -1)
 		free(input), exit(0);
-	status = execute_cmd(input, argv[0]);
-	if (status)
+	if (execute_cmd(input, argv[0]))
 		break;
 	}
 	free(input);
-	return (status);
+	return (0);
 }

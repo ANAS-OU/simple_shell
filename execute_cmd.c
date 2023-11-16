@@ -26,7 +26,7 @@ int execute_cmd(char *input, char *pgm)
 	if (!_strcmp(inList[0], "exit")) /* Exit the shell */
 	{
 		free_list(inList);
-		exit(2);
+		return (1);
 	}
 	if (customize_env(inList))
 		return (0);
