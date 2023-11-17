@@ -43,6 +43,7 @@ int execute_cmd(char *input, char *pgm)
 	if (child_pid == 0) /* Child process */
 	{
 		execve(path, inList, environ);
+		exit(1);
 	}
 	else /* Parent process */
 			wait(&status);
@@ -78,7 +79,7 @@ char *get_path(char *cmd)
 	{
 		/* the added two are for the slash and null determination character */
 		path_size = _strlen(paths[i]) + _strlen(cmd) + 2;
-		path = malloc(sizeof(char *) * path_size);
+		path = malloc(sizeof(char) * path_size);
 		_strcpy(path, paths[i]);
 		_strcat(path, "/");
 		_strcat(path, cmd);
