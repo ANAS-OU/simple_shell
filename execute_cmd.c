@@ -36,7 +36,7 @@ int execute_cmd(char *input, char *pgm)
 	{
 		print_error(pgm, inList[0]);
 		free_list(inList);
-		return (0);
+		return (127);
 	}
 	/* Creating new process to execute the given cmd */
 	child_pid = fork();
