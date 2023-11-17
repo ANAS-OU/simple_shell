@@ -28,7 +28,11 @@ int main(int argc, char **argv)
 		free(input), exit(0);
 	if (execute_cmd(input, argv[0]))
 		break;
+
+	else
+		continue;
 	}
+	if (isatty(STDIN_FILENO))
 	free(input);
 	return (0);
 }
