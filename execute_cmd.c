@@ -43,7 +43,6 @@ int execute_cmd(char *input, char *pgm)
 	if (child_pid == 0) /* Child process */
 	{
 		execve(path, inList, environ);
-		exit(1);
 	}
 	else /* Parent process */
 			wait(&status);
